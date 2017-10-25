@@ -1,0 +1,166 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*全屏布局的特点,html,body的宽高都设置为100%*/
+.cs-layout {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    max-width: 640px;
+    min-width: 320px;
+}
+
+.cs-header {
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid black;
+    position: fixed;
+    max-width: 640px;
+    background-color: #eee;
+}
+
+.cs-header > .back, .cs-header > .menu {
+    width: 49px;
+    height: 49px;
+    position: absolute;
+    top: 0;
+    background: url(../images/sprites.png);
+    background-size: 200px 200px;
+    padding: 14px;
+    background-origin: content-box;
+    background-clip: content-box;
+}
+
+.cs-header > .back {
+    left: 0;
+    background-position: -20px 0;
+}
+
+.cs-header > .menu {
+    right: 0;
+    background-position: -60px 0;
+}
+.cs-header form {
+    width: 100%;
+    padding:5px 50px 0;
+    height: 40px;
+    box-sizing: border-box;
+}
+.cs-header form input {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #fff;
+    border-radius:8px;
+    box-sizing: border-box;
+    padding-left:10px;
+}
+
+.cs-main {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 51px;
+    /*background-color: purple;*/
+}
+
+.cs-main-left {
+    width: 100px;
+    height: 100%;
+    float: left;
+    /*background-color: pink;*/
+    overflow: hidden;
+    position: relative;
+}
+
+.cs-main-left > ul {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.cs-main-left li a {
+    display: block;
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    background-color: #eee;
+    line-height: 50px;
+    text-align: center;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+
+}
+.cs-main-left li.active a {
+    color:red;
+    background-color: #fff;
+}
+
+.cs-main-right {
+    height: 100%;
+    margin-left: 100px;
+    /*切记不可以设置宽度,父盒子已经有宽度了,左边的兄弟盒子也有宽度,
+        直接把 margin-left设置成左边盒子的宽度,那么系统会自动计算出右边盒子的宽度*/
+    display: flex; /*做弹性盒布局是为了让下面的hot-category有固定的高度,然后才可以设置overflow属性,隐藏ul,从而做ul滚动事件*/
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.cs-main-right > a {
+    display: block;
+    width: 100%;
+}
+
+.cs-main-right > a > img {
+    display: block;
+    width: 100%;
+}
+
+.cs-main-right > h2 {
+    padding-left: 10px;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #ccc;
+    margin: 10px 0;
+
+}
+
+.cs-main-right > .hot-category {
+    width: 100%;
+    flex: 1;
+    overflow: hidden; /*是为了让里面ul垂直滚动,所以它要有固定的高度,overflow只有有固定的高度*/
+}
+
+.hot-category ul {
+    /*width: 100%;*/
+}
+
+.hot-category li {
+    width: 33.3%;
+    float: left;
+    text-align: center;
+}
+
+.hot-category li a {
+    display: inline-block;
+
+}
+
+.hot-category li a p {
+    height: 20px;
+    line-height: 20px;
+}
+

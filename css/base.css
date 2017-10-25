@@ -1,0 +1,30 @@
+html,body,ul,li,p,h1,h2,h3,h4,h5,h6,img,a,form,input {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+body {
+    font-size:13px;
+    font-family:'Microsoft YaHei',sans-serif;
+}
+input {
+    outline:0;
+    border:0;
+    border:1px solid #ccc;
+}
+.clearfix:before,.clearfix:after {
+    content:'';
+    display: block;
+    height: 0;
+    line-height: 0;
+    clear:both;
+    visibility: hidden;
+}
+a {
+    color:#666;
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
